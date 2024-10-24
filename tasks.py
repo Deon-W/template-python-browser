@@ -40,7 +40,7 @@ def solve_challenge():
         page.click("button:text('Start')")
         time.sleep(1)
         for row in rows:
-            time.sleep(0.3)
+            time.sleep(1)
             fill_and_submit_form(row, page=page)
         element = page.locator("css=div.congratulations")
         browser.screenshot(element)
