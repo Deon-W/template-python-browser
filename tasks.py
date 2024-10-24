@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import time
 
 import requests
 from robocorp import browser
@@ -37,7 +38,9 @@ def solve_challenge():
         #  extracted above.
         page = browser.goto("https://rpachallenge.com/")
         page.click("button:text('Start')")
+        time.sleep(1)
         for row in rows:
+            time.sleep(0.3)
             fill_and_submit_form(row, page=page)
         element = page.locator("css=div.congratulations")
         browser.screenshot(element)
